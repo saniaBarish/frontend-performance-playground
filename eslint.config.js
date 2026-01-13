@@ -21,6 +21,10 @@ export default defineConfig([
     },
     rules: {
       semi: ['error', 'always'],
+      "eol-last": ["error", "always"],
+      "quotes": ["error", "single"],
+      indent: ['error', 2],
+      "no-multiple-empty-lines": ["error", { "max": 1 }],
     },
   },
-])
+]);

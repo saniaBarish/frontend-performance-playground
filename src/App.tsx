@@ -1,14 +1,19 @@
-import { useState } from 'react';
+import { NoOptimization } from './containers';
+import { Container } from './components';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import { useRenderCounter } from './hooks';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const renders = useRenderCounter('App');
 
   return (
-    <div className="card">
-      <button onClick={() => setCount((count) => count + 1)}>
-        count is {count}
-      </button>
-    </div>
+    <Container>
+      <Stack direction="column" spacing={2}>
+        <Typography>App renders: {renders.current}</Typography>
+        <NoOptimization />
+      </Stack>
+    </Container>
   );
 }
 
